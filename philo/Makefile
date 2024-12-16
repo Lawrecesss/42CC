@@ -5,7 +5,7 @@ AR = ar rcs
 RM = rm -rf
 
 UTILS_PATH = ./utils
-SRCS = main.c ${UTILS_PATH}/helper_functions.c
+SRCS = main.c ${UTILS_PATH}/helper_functions.c ${UTILS_PATH}/validations.c ${UTILS_PATH}/initializations.c
 OBJS = ${SRCS:.c=.o}
 
 all: ${NAME}

@@ -1,5 +1,27 @@
 #include "./../philo.h"
 
+int is_argv_valid(char **number)
+{
+	int i;
+	int argv[4];
+
+	i = 0;
+	if (is_num(number))
+	{
+		while (i < 4)
+		{
+			argv[i] = ft_atoi(number[i + 1]);
+			i++;
+		}
+		if (argv[0] > 200)
+			return (0);
+		if (argv[1] < 60 || argv[2] < 60 || argv[3] < 60)
+			return (0);
+		return (1);
+	}
+	return (0);
+}
+
 int is_num(char **number)
 {
 	int i;
@@ -22,6 +44,7 @@ int is_num(char **number)
 	}
 	return (1);
 }
+
 int ft_atoi(char *number)
 {
 	int num;
